@@ -8,7 +8,7 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 DESCRIPTION = "A Python package to provide tools for handling echo images in DICOM format built on top of pydicom, NumPy, MatPlotLib and Open-CV."
-PACKAGE_NAME = "pyecho"
+PACKAGE_NAME = "Py-Echo"
 AUTHOR = "Alejandro Alcaine, PhD"
 EMAIL = "lalcaine@usj.es"
 GITHUB_URL = "https://github.com/aalcaineo/pyecho"
