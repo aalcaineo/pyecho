@@ -1,7 +1,7 @@
 # Py-Echo
 A Python package to provide tools for handling echo images in DICOM format built on top  of pydicom, NumPy, MatPlotLib and Open-CV.
 
-#### Version: 0.0.1
+#### Version: 0.0.2
 
 ## Author:
 

@@ -13,7 +13,7 @@ AUTHOR = "Alejandro Alcaine, PhD"
 EMAIL = "lalcaine@usj.es"
 GITHUB_URL = "https://github.com/aalcaineo/pyecho"
 
-with open(os.path.join(this_directory,PACKAGE_NAME,"__init__.py"), "r") as f:
+with open(os.path.join(this_directory,"pyecho","__init__.py"), "r") as f:
     version = ""
     while not version:
         version = re.findall('\t*\s*^__version__\s*=\s*"(\d\.\d\.\d)"\n+', f.readline())
