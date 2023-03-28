@@ -88,7 +88,7 @@ class Echo:
         if m_mode_data:
             img = self.get_echo()[
                 m_mode_data.RegionLocationMinY0 : m_mode_data.RegionLocationMaxY1,
-                m_mode_data.RegionLocationMinX0 : m_mode_data.RegionLocationMaxX1,
+                m_mode_data.RegionLocationMinX0 : min(m_mode_data.ReferencePixelX0,m_mode_data.RegionLocationMaxX1),
             ]
             if crop is None:
                 return img
