@@ -8,12 +8,12 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 DESCRIPTION = "A Python package to provide tools for handling echo images in DICOM format built on top of pydicom, NumPy, MatPlotLib and Open-CV."
-PACKAGE_NAME = "Py-Echo"
+PACKAGE_NAME = "pyecho"
 AUTHOR = "Alejandro Alcaine, PhD"
 EMAIL = "lalcaine@usj.es"
 GITHUB_URL = "https://github.com/aalcaineo/pyecho"
 
-with open(os.path.join(this_directory,"pyecho","__init__.py"), "r") as f:
+with open(os.path.join(this_directory,PACKAGE_NAME,"__init__.py"), "r") as f:
     version = ""
     while not version:
         version = re.findall('\t*\s*^__version__\s*=\s*"(\d\.\d\.\d)"\n+', f.readline())
