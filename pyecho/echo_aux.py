@@ -19,7 +19,7 @@ class USRegionSpatialFormat(Enum):
     GRAPHICS = 5
 
 class PhysicalUnits(Enum):
-    """Codes of Physiscal units."""
+    """Codes of Physical units."""
 
     NONE = 0
     PERCENT = 1
