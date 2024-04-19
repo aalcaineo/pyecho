@@ -21,11 +21,11 @@ class Echo:
 
     # INIT
     def __init__(self, data: pydicom.FileDataset):
-        self.data = data
+        self.__data = data
 
-        self.meta = {}
-        for sequence in self.data.SequenceOfUltrasoundRegions:
-            self.meta[USRegionSpatialFormat(sequence.RegionSpatialFormat)] = {
+        self.__meta = {}
+        for sequence in self.__data.SequenceOfUltrasoundRegions:
+            self.__meta[USRegionSpatialFormat(sequence.RegionSpatialFormat)] = {
                 "PhysicalUnitsXDirection": PhysicalUnits(
                     sequence.PhysicalUnitsXDirection
                 ),
@@ -43,7 +43,7 @@ class Echo:
         Returns:
             np.ndarray: Image array.
         """
-        return cv2.cvtColor(self.data.pixel_array, cv2.COLOR_RGB2GRAY)
+        return cv2.cvtColor(self.__data.pixel_array, cv2.COLOR_RGB2GRAY)
 
     def get_mmode_idx(self) -> int:
         """Finds the index of the M-mode within SequenceOfUltrasoundRegions.
@@ -51,7 +51,7 @@ class Echo:
         Returns:
             int: Index of the M-mode (returns -1 when not found).
         """
-        for i, seq in enumerate(self.data.SequenceOfUltrasoundRegions):
+        for i, seq in enumerate(self.__data.SequenceOfUltrasoundRegions):
             if (
                 USRegionSpatialFormat(seq.RegionSpatialFormat)
                 == USRegionSpatialFormat.MMODE
@@ -69,7 +69,7 @@ class Echo:
         """
         idx = self.get_mmode_idx()
         if idx >= 0:
-            return self.data.SequenceOfUltrasoundRegions[idx]
+            return self.__data.SequenceOfUltrasoundRegions[idx]
         return pydicom.Dataset()
 
     def get_mmode_img(self, crop: Tuple[int, int, int, int] = None) -> np.ndarray:
@@ -86,10 +86,17 @@ class Echo:
         """
         m_mode_data = self.get_mmode_metadata()
         if m_mode_data:
-            img = self.get_echo()[
-                m_mode_data.RegionLocationMinY0 : m_mode_data.RegionLocationMaxY1,
-                m_mode_data.RegionLocationMinX0 : min(m_mode_data.ReferencePixelX0,m_mode_data.RegionLocationMaxX1),
-            ]
+            if "ReferencePixelX0" in m_mode_data:
+                img = self.get_echo()[
+                    m_mode_data.RegionLocationMinY0 : m_mode_data.RegionLocationMaxY1,
+                    m_mode_data.RegionLocationMinX0 : min(m_mode_data.ReferencePixelX0,m_mode_data.RegionLocationMaxX1),
+                ]
+            else:
+                img = self.get_echo()[
+                    m_mode_data.RegionLocationMinY0 : m_mode_data.RegionLocationMaxY1,
+                    m_mode_data.RegionLocationMinX0 : m_mode_data.RegionLocationMaxX1,
+                ]
+
             if crop is None:
                 return img
             else:
