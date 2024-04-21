@@ -30,7 +30,7 @@ setup(
     author_email=EMAIL,
     url=GITHUB_URL,
     keywords=["Measurements", "Correlation","Statistics"],
-    install_requires=["pydicom>=2.3.0","matplotlib>=3.7.0","numpy>=1.23.5","opencv-python>=4.5.5.62"],
+    install_requires=["pydicom>=2.3.0","matplotlib>=3.7.0","numpy>=1.23.5","opencv-python>=4.5.5.62","GDCM>=1.1","pylibjpeg>=2.0.0","pylibjpeg-libjpeg>=2.1.0"],
     python_requires=">=3.8",
     extras_require={"dev":["twine>=4.0.2"]},
     classifiers=[
