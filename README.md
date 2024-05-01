@@ -19,7 +19,7 @@ Spain
 ## Acknowledgments:
 This package was possible partially thanks to the Departamento de Ciencia, Universidad y Sociedad del Conocimiento, from the Gobierno de Aragón (Spain) (Research Group T71\_23D). Also thanks to Project PID2022-139143OA-I00 funded by MICIU/AEI/10.13039/501100011033 and by ERDF/EU. 
 
-![AEI](https://www.aei.gob.es/sites/default/files/inline-images/MICIU%2BCofinanciado%2BAEI.jpg)
+<img src='https://www.aei.gob.es/sites/default/files/inline-images/MICIU%2BCofinanciado%2BAEI.jpg'/>
 
 ## Citation:
 If you use this package in your research, please cite as:
