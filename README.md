@@ -1,7 +1,17 @@
 # Py-Echo
-A Python package to provide tools for an easy handling echo images in DICOM format built on top of pydicom, NumPy, MatPlotLib and Open-CV.
+Py-Echo is a Python package providing tools for easy handling of echo images in DICOM format built on top of pydicom, NumPy, MatPlotLib and Open-CV.
 
-#### Version: 0.0.3
+#### Version: 0.1.0
+
+## Installation and usage
+
+Please install this package using PiP by typing:
+
+`pip install DEVCONHEART_pyecho`
+
+Import this package as:
+
+`import pyecho as pye`
 
 ## Author:
 
@@ -13,7 +23,7 @@ lalcaine@usj.es
 
 Faculty of Health Sciences\
 University San Jorge\
-Villanueva de Gállego (Zaragoza)\
+Villanueva de Gallego (Zaragoza)\
 Spain
 
 ## Acknowledgments:
@@ -24,4 +34,4 @@ This package was possible partially thanks to the Departamento de Ciencia, Unive
 ## Citation:
 If you use this package in your research, please cite as:
 
-D. Chaparro-Victoria et. al. "Automatic Segmentation of the Inferior Vena Cava from M-mode Ultrasound Images". Proceedings of Computing in Cardiology 2024.
+D. Chaparro-Victoria et. al. *"Automatic Segmentation of the Inferior Vena Cava from M-mode Ultrasound Images"*. Proceedings of Computing in Cardiology 2024.
